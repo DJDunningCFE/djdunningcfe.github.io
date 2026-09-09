@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DJ Dunning, CFE - fraud operations. I spot friction in the path to an intended outcome, then engineer the systems and processes that remove it.">
+<meta property="og:title" content="DJ Dunning, CFE">
+<meta property="og:description" content="Fraud operations. I spot friction in the path to an intended outcome, then engineer the systems and processes that remove it.">
+<meta property="og:type" content="profile">
+<title>DJ Dunning, CFE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<style>
+  :root {
+    --paper:      #f7f8fa;
+    --surface:    #ffffff;
+    --ink:        #14202f;
+    --muted:      #5a6879;
+    --rule:       #d8dee7;
+    --navy:       #16305c;
+    --navy-soft:  #e8edf5;
+    --focus:      #2d5490;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:     #0e141c;
+      --surface:   #151d28;
+      --ink:       #dfe6ef;
+      --muted:     #93a2b5;
+      --rule:      #26313f;
+      --navy:      #8fb4e8;
+      --navy-soft: #1b2735;
+      --focus:     #8fb4e8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:     #0e141c;
+    --surface:   #151d28;
+    --ink:       #dfe6ef;
+    --muted:     #93a2b5;
+    --rule:      #26313f;
+    --navy:      #8fb4e8;
+    --navy-soft: #1b2735;
+    --focus:     #8fb4e8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 4rem 1.5rem 6rem;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; }
+
+  a { color: var(--navy); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+  .masthead { display: flex; flex-direction: column; gap: 0.5rem; }
+  h1 {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: clamp(2.1rem, 5vw, 2.9rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h1 .cred { color: var(--navy); font-weight: 600; }
+  .standfirst {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0.5rem 0 0;
+    max-width: 38rem;
+    text-wrap: pretty;
+  }
+  .sub {
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0.65rem 0 0;
+    max-width: 38rem;
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.4rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 2px solid var(--navy);
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .contact strong { color: var(--ink); font-weight: 600; }
+
+  section { margin-top: 3.5rem; }
+  h2 {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p { margin: 0 0 1rem; max-width: 40rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .built { display: flex; flex-direction: column; gap: 2rem; }
+  .item { display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
+  .item h3 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.22rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .item p { margin: 0; }
+  .friction {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.35rem 0.9rem;
+    margin-top: 0.5rem;
+    padding: 0.85rem 1rem;
+    background: var(--navy-soft);
+    border-left: 3px solid var(--navy);
+    font-size: 0.97rem;
+  }
+  .friction dt {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    padding-top: 0.3em;
+  }
+  .friction dd { margin: 0; }
+  @media (max-width: 30rem) {
+    .friction { grid-template-columns: 1fr; gap: 0.1rem; }
+    .friction dd { margin-bottom: 0.6rem; }
+    .friction dd:last-child { margin-bottom: 0; }
+  }
+
+  .roles { display: flex; flex-direction: column; gap: 1.6rem; }
+  .role { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0 1.5rem; align-items: baseline; }
+  .role .when {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .role .what { min-width: 0; }
+  .role .title { font-weight: 600; }
+  .role .org { color: var(--muted); }
+  .role .note { font-size: 0.95rem; color: var(--muted); margin-top: 0.3rem; }
+  @media (max-width: 34rem) {
+    .role { grid-template-columns: 1fr; gap: 0.15rem; }
+  }
+
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 2rem; }
+  .col h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 0.6rem; color: var(--ink); }
+  .col ul { margin: 0; padding: 0; list-style: none; }
+  .col li {
+    font-size: 0.97rem;
+    color: var(--muted);
+    padding: 0.28rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .col li:last-child { border-bottom: none; }
+
+  footer {
+    margin-top: 4.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.87rem;
+    color: var(--muted);
+  }
+
+  @media print {
+    body { background: #fff; color: #000; padding: 0.5in; font-size: 11pt; }
+    .friction { background: #f2f5fa; }
+    section { margin-top: 1.6rem; break-inside: avoid; }
+    .item, .role { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>DJ Dunning, <span class="cred">CFE</span></h1>
+    <p class="standfirst">I spot friction in the path to an intended outcome, then engineer the
+      systems and processes that remove it. Changing a system is expensive, so the fix is rarely all I take from
+      it — the same work should leave the process more precise and more efficient than it was.</p>
+    <p class="sub">Nine years of fraud operations in credit unions is where I learned to do it.</p>
+    <div class="contact">
+      <span><strong>Rochester, NY</strong></span>
+      <span>Open to remote</span>
+      <span><a href="mailto:DJ.Dunning@yahoo.com">DJ.Dunning@yahoo.com</a></span>
+    </div>
+  </header>
+
+  <section>
+    <h2>How I work</h2>
+    <p>Fraud investigation is where I learned the method, but the method itself is not really about fraud. A case
+      that goes wrong is usually a symptom: somewhere between what a process was designed to achieve and what it
+      actually produces, there is friction — a step that depends on someone remembering, a control that is available
+      but optional, a handoff with no clear owner.</p>
+    <p>Finding that friction is the investigative part. The part I care about is what comes after: changing the
+      system so the friction is gone rather than documented, and so the same failure isn't available a second time.
+      Procedures describe what people should do. Systems determine what they can do, and that is the level worth
+      working at.</p>
+    <p>The second half is where most of the value sits. Getting approval to change a live process is slow, so
+      closing the original gap is a poor return on that cost by itself. Once the system is open, the question worth
+      asking is what else this same change can do — fewer steps, fewer judgment calls, less rework, a more
+      accurate result. The problem that started it often ends up being the smallest thing the change accomplished.</p>
+  </section>
+
+  <section>
+    <h2>Built</h2>
+    <div class="built">
+
+      <div class="item">
+        <h3>Fraud Ambassador Program — eight branches</h3>
+        <p>Designed and lead an executive-approved program placing a trained fraud point of contact in every branch.
+          Built the training standards, documentation expectations, and escalation path from nothing, and trained
+          nine ambassadors plus the Manager of Branch Administration and training staff. Now in its second annual
+          cycle.</p>
+        <dl class="friction">
+          <dt>Friction</dt>
+          <dd>Frontline staff who spotted something wrong had no fast route to fraud expertise. Guidance moved
+            through slow, passive channels that people had to think to go looking for.</dd>
+          <dt>Change</dt>
+          <dd>A named person in every branch with a direct line to the fraud team, so the path from noticing to
+            escalating is one step instead of several.</dd>
+          <dt>Result</dt>
+          <dd>Ambassadors independently stopped losses in three separate instances within the program's first
+            month — and questions that used to travel to the fraud team now resolve at the branch.</dd>
+        </dl>
+      </div>
+
+      <div class="item">
+        <h3>Turning an optional control into a structural one</h3>
+        <p>Casework surfaced a pattern where a verification step was reaching its intended outcome only some of the
+          time — not because it failed when used, but because using it was a judgment call. I documented the gap,
+          made the case for changing the requirement itself rather than issuing guidance about it, and authored the
+          revisions that followed.</p>
+        <dl class="friction">
+          <dt>Friction</dt>
+          <dd>A control that depended on someone deciding to invoke it, on every individual occasion.</dd>
+          <dt>Change</dt>
+          <dd>The control became a required part of the process rather than an available option, organization-wide —
+            so the gap closed by default instead of by diligence.</dd>
+          <dt>Also</dt>
+          <dd>Removing the judgment call took a decision out of the workflow entirely. The step became consistent
+            across every case and every person, which made it quicker to complete and far easier to audit.</dd>
+        </dl>
+      </div>
+
+      <div class="item">
+        <h3>Fraud and AML platform evaluation</h3>
+        <p>Evaluated six fraud monitoring and AML software vendors against real operational fit, comparing
+          capabilities, identifying gaps against how the work is actually done, and delivering written
+          recommendations used during leadership review.</p>
+      </div>
+
+      <div class="item">
+        <h3>Frontline communication that outlived me</h3>
+        <p>At Navy Federal I built a security-adoption leaderboard and a monthly fraud newsletter reaching roughly
+          2,000 fraud and contact-center employees.</p>
+        <dl class="friction">
+          <dt>Friction</dt>
+          <dd>Information that people needed existed, but nothing carried it to them on a reliable cadence.</dd>
+          <dt>Result</dt>
+          <dd>Other mentor teams adopted the leaderboard on their own initiative, without being asked to.</dd>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Where</h2>
+    <div class="roles">
+      <div class="role">
+        <div class="when">2025 &ndash; present</div>
+        <div class="what">
+          <div class="title">Fraud Specialist</div>
+          <div class="org">Advantage Federal Credit Union &middot; Rochester, NY</div>
+          <div class="note">Complex fraud investigation across card, ACH, wire, remote deposit, P2P, scams, elder
+            exploitation and application fraud. Detection-rule tuning informed by case outcomes, BSA/AML reporting
+            production, and recurring reporting to EVP and VP-level stakeholders. 2026 High Performer — the
+            organization's highest rating.</div>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2023 &ndash; 2025</div>
+        <div class="what">
+          <div class="title">Member Service Advisor</div>
+          <div class="org">Reliant Federal Credit Union &middot; Brockport, NY</div>
+          <div class="note">Branch and lending operations, identifying and escalating suspicious account activity.</div>
+        </div>
+      </div>
+      <div class="role">
+        <div class="when">2017 &ndash; 2023</div>
+        <div class="what">
+          <div class="title">MSR II / III / Mentor — Fraud Operations</div>
+          <div class="org">Navy Federal Credit Union &middot; Pensacola, FL</div>
+          <div class="note">Entered Fraud Operations in 2018 and advanced to Mentor within six months of transferring.
+            Served as the day-to-day bridge between management and staff under supervisor oversight — coaching up to
+            22 people directly and supporting 45 across three teams, and acting as subject-matter expert on complex
+            fraud judgment calls.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Coverage</h2>
+    <div class="cols">
+      <div class="col">
+        <h3>Fraud types</h3>
+        <ul>
+          <li>Account takeover</li>
+          <li>Card fraud — credit and debit</li>
+          <li>ACH and wire fraud</li>
+          <li>Remote deposit capture</li>
+          <li>Application and identity fraud</li>
+          <li>P2P — Zelle, Venmo, CashApp</li>
+          <li>Scams and elder exploitation</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Practice</h3>
+        <ul>
+          <li>Control gap identification</li>
+          <li>Process and systems design</li>
+          <li>Detection rule tuning</li>
+          <li>Standards and documentation design</li>
+          <li>BSA/AML support — SAR and CTR production</li>
+          <li>Executive-facing reporting</li>
+          <li>Training program design</li>
+          <li>Vendor evaluation</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Credential</h3>
+        <ul>
+          <li>Certified Fraud Examiner, 2026</li>
+          <li>Association of Certified Fraud Examiners</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Available for fraud operations, risk operations, and program design roles. Remote preferred.
+    Reach me at <a href="mailto:DJ.Dunning@yahoo.com">DJ.Dunning@yahoo.com</a>.
+  </footer>
+
+</div>
+
+</body>
+</html>
