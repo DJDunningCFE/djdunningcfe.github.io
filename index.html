@@ -150,6 +150,25 @@
     .friction dd:last-child { margin-bottom: 0; }
   }
 
+  .boundary {
+    margin-top: 0.75rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    font-size: 0.93rem;
+    color: var(--muted);
+  }
+  .boundary::before {
+    content: "Note";
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+
   .roles { display: flex; flex-direction: column; gap: 1.6rem; }
   .role { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0 1.5rem; align-items: baseline; }
   .role .when {
@@ -201,28 +220,34 @@
     <p class="standfirst">I spot friction in the path to an intended outcome, then engineer the
       systems and processes that remove it. Changing a system is expensive, so the fix is rarely all I take from
       it — the same work should leave the process more precise and more efficient than it was.</p>
-    <p class="sub">Nine years of fraud operations in credit unions is where I learned to do it.</p>
+    <p class="sub">Nine-plus years in credit union operations, six-plus of them in dedicated fraud roles, is where
+      I learned to do it — inside federally regulated institutions, which is the controls environment a fintech
+      inherits the moment it works with a partner bank. Where I'm headed now is a role where designing and
+      measuring those controls is the job itself, rather than something done alongside casework.</p>
     <div class="contact">
       <span><strong>Rochester, NY</strong></span>
       <span>Open to remote</span>
-      <span><a href="mailto:DJ.Dunning@yahoo.com">DJ.Dunning@yahoo.com</a></span>
+      <span><a href="mailto:djdunningcfe@outlook.com">djdunningcfe@outlook.com</a></span>
+      <span><a href="https://linkedin.com/in/dj-dunning">linkedin.com/in/dj-dunning</a></span>
     </div>
   </header>
 
   <section>
     <h2>How I work</h2>
-    <p>Fraud investigation is where I learned the method, but the method itself is not really about fraud. A case
+    <p>Fraud operations is where I honed the method, and the method itself reaches well beyond fraud. A case
       that goes wrong is usually a symptom: somewhere between what a process was designed to achieve and what it
       actually produces, there is friction — a step that depends on someone remembering, a control that is available
       but optional, a handoff with no clear owner.</p>
-    <p>Finding that friction is the investigative part. The part I care about is what comes after: changing the
-      system so the friction is gone rather than documented, and so the same failure isn't available a second time.
-      Procedures describe what people should do. Systems determine what they can do, and that is the level worth
-      working at.</p>
-    <p>The second half is where most of the value sits. Getting approval to change a live process is slow, so
-      closing the original gap is a poor return on that cost by itself. Once the system is open, the question worth
-      asking is what else this same change can do — fewer steps, fewer judgment calls, less rework, a more
-      accurate result. The problem that started it often ends up being the smallest thing the change accomplished.</p>
+    <p>Finding that friction is the investigative half, and it has to be right — nothing downstream works if the
+      diagnosis is wrong. But an investigation that ends in a documented finding leaves the same failure available
+      tomorrow, so the work continues into the second half: changing the system so the friction is gone rather than
+      recorded. Procedures matter, and I have authored my share of them — they tell people what they should do.
+      Systems decide what people can do, and a change made there holds without depending on anyone remembering.</p>
+    <p>The second half is where most of the value sits. Changing a live process is deliberate work — it takes
+      review, approvals, and the time of people whose own work the change touches, and it should. All of that is
+      already spent by the time the original gap closes, so the question I ask next is what else this same change
+      can carry: fewer steps, fewer judgment calls, less rework, a more accurate result. The problem that started
+      it often ends up being the smallest thing the change accomplished.</p>
   </section>
 
   <section>
@@ -267,6 +292,29 @@
       </div>
 
       <div class="item">
+        <h3>Measuring a control so the change could be argued</h3>
+        <p>A control threshold was being debated from individual cases, which makes every loss look like an
+          exception rather than a pattern. I built the reporting structure that tracks it — deciding which measures
+          actually matter, including derived ones that separate recovered loss from unrecoverable, and loss
+          prevented from loss taken — so the case put to senior leadership rests on the shape of the data instead
+          of on the last bad week.</p>
+        <p class="boundary">You will not find figures anywhere on this page. The numbers belong to my employer and
+          stay there. What travels is the method — deciding what to measure, and why that measure answers the
+          question being asked.</p>
+        <dl class="friction">
+          <dt>Friction</dt>
+          <dd>No standing measure of what the threshold was costing, so the argument restarted from zero every
+            time it came up.</dd>
+          <dt>Change</dt>
+          <dd>A defined set of measures, captured as events occur, that show the trend and let the genuine
+            exceptions be seen as exceptions.</dd>
+          <dt>Also</dt>
+          <dd>The same measures show which detection routes are actually stopping these, not just what was lost —
+            which is a different and more useful question than the one that started it.</dd>
+        </dl>
+      </div>
+
+      <div class="item">
         <h3>Fraud and AML platform evaluation</h3>
         <p>Evaluated six fraud monitoring and AML software vendors against real operational fit, comparing
           capabilities, identifying gaps against how the work is actually done, and delivering written
@@ -307,13 +355,14 @@
         <div class="what">
           <div class="title">Member Service Advisor</div>
           <div class="org">Reliant Federal Credit Union &middot; Brockport, NY</div>
-          <div class="note">Branch and lending operations, identifying and escalating suspicious account activity.</div>
+          <div class="note">Joined following relocation from Pensacola, FL to the Rochester, NY area. Branch and
+            lending operations, identifying and escalating suspicious account activity.</div>
         </div>
       </div>
       <div class="role">
         <div class="when">2017 &ndash; 2023</div>
         <div class="what">
-          <div class="title">MSR II / III / Mentor — Fraud Operations</div>
+          <div class="title">Fraud Operations — Mentor (team lead), MSR I&ndash;V</div>
           <div class="org">Navy Federal Credit Union &middot; Pensacola, FL</div>
           <div class="note">Entered Fraud Operations in 2018 and advanced to Mentor within six months of transferring.
             Served as the day-to-day bridge between management and staff under supervisor oversight — coaching up to
@@ -344,6 +393,8 @@
         <ul>
           <li>Control gap identification</li>
           <li>Process and systems design</li>
+          <li>Control performance measurement</li>
+          <li>Issue identification and escalation</li>
           <li>Detection rule tuning</li>
           <li>Standards and documentation design</li>
           <li>BSA/AML support — SAR and CTR production</li>
@@ -364,7 +415,7 @@
 
   <footer>
     Available for fraud operations, risk operations, and program design roles. Remote preferred.
-    Reach me at <a href="mailto:DJ.Dunning@yahoo.com">DJ.Dunning@yahoo.com</a>.
+    Reach me at <a href="mailto:djdunningcfe@outlook.com">djdunningcfe@outlook.com</a>.
   </footer>
 
 </div>
